@@ -23,7 +23,7 @@
  */
 
 import type { HTMLAttributes, JSX } from 'react';
-import { ElementPropsWithout, RemovedProps } from '../../helpers/element-props';
+import { ElementPropsWithout, RemovedProps } from '../../utils/element-props';
 
 type BaseElement = keyof JSX.IntrinsicElements;
 

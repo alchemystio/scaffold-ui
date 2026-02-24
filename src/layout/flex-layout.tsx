@@ -24,11 +24,8 @@
 
 import { forwardRef, Ref } from "react";
 import { Slot } from "@radix-ui/react-slot";
-import { cn } from "../utilities/utils";
-import {
-    resolveEnumClass,
-    resolveResponsiveClass
-} from "../utilities/breakpoints-utils";
+import { cn } from "../utils/utils";
+import { resolveEnumClass, resolveResponsiveClass } from "../utils/breakpoints-utils";
 import type { FlexProps } from "./props/flex-props";
 
 type DefaultElement = HTMLDivElement;
@@ -86,7 +83,7 @@ const FlexLayout = forwardRef<DefaultElement, FlexProps>(
         },
         ref: Ref<DefaultElement>
     ) => {
-        const Component = asChild ? Slot : Tag;
+        const FlexElement = asChild ? Slot : Tag;
 
         const classes = [
             "flex",
@@ -146,7 +143,7 @@ const FlexLayout = forwardRef<DefaultElement, FlexProps>(
         ];
 
         return (
-            <Component ref={ref} className={cn(classes, className)} {...props} />
+            <FlexElement ref={ref} className={cn(classes, className)} {...props} />
         );
     }
 );

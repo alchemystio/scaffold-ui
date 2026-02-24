@@ -24,11 +24,8 @@
 
 import { forwardRef, Ref } from "react";
 import { Slot } from "@radix-ui/react-slot";
-import { cn } from "../utilities/utils";
-import {
-    resolveEnumClass,
-    resolveResponsiveClass,
-} from "../utilities/breakpoints-utils";
+import { cn } from "../utils/utils";
+import { resolveEnumClass, resolveResponsiveClass } from "../utils/breakpoints-utils";
 import type { GridProps } from "./props/grid-props";
 
 type DefaultElement = HTMLDivElement;
@@ -99,7 +96,7 @@ const GridLayout = forwardRef<DefaultElement, GridProps>(
         },
         ref: Ref<DefaultElement>
     ) => {
-        const Component = asChild ? Slot : Tag;
+        const GridElement = asChild ? Slot : Tag;
 
         const classes = [
             "grid",
@@ -176,7 +173,7 @@ const GridLayout = forwardRef<DefaultElement, GridProps>(
         ];
 
         return (
-            <Component ref={ref} className={cn(classes, className)} {...props} />
+            <GridElement ref={ref} className={cn(classes, className)} {...props} />
         );
     }
 );
