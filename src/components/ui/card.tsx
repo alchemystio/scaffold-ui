@@ -24,7 +24,7 @@
 
 import * as React from "react"
 
-import { cn } from "@/src/utilities/utils"
+import { cn } from "@/src/utils/classnames"
 
 function Card({ className, ...props }: React.ComponentProps<"div">) {
   return (

@@ -26,7 +26,7 @@ import * as React from "react"
 import { Command as CommandPrimitive } from "cmdk"
 import { SearchIcon } from "lucide-react"
 
-import { cn } from "@/src/utilities/utils"
+import { cn } from "@/src/utils/classnames"
 import {
   Dialog,
   DialogContent,

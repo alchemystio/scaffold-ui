@@ -24,7 +24,7 @@
 
 import * as React from "react";
 import { Slot } from "@radix-ui/react-slot";
-import { cn } from "@/src/utils/utils";
+import { cn } from "@/src/utils/classnames";
 
 type ConstraintProps = {
     top?: number | string;

@@ -24,8 +24,8 @@
 
 import { forwardRef, Ref } from "react";
 import { Slot } from "@radix-ui/react-slot";
-import { cn } from "../utils/utils";
-import { resolveEnumClass, resolveResponsiveClass } from "../utils/breakpoints-utils";
+import { cn } from "../utils/classnames";
+import { resolveEnumClass, resolveResponsiveClass } from "./core/responsive-engine";
 import type { FlexProps } from "./props/flex-props";
 
 type DefaultElement = HTMLDivElement;

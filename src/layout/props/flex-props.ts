@@ -24,7 +24,7 @@
 
 import type { BaseProps } from './base-props';
 
-type ResponsiveValue<T> = T | { initial?: T; [breakpoint: string]: T | undefined };
+type ResponsiveValue<T> = T | { initial?: T;[breakpoint: string]: T | undefined };
 
 type Direction = 'row' | 'col' | 'row-reverse' | 'col-reverse';
 type Wrap = 'nowrap' | 'wrap' | 'wrap-reverse';
@@ -33,11 +33,11 @@ type JustifyValue = 'start' | 'center' | 'end' | 'between' | 'around' | 'evenly'
 type AlignValue = 'left' | 'center' | 'right' | 'justify';
 
 type FlexProps = BaseProps & {
-  direction?: ResponsiveValue<Direction>;
-  wrap?: ResponsiveValue<Wrap>;
-  justify?: ResponsiveValue<JustifyValue>;
-  items?: ResponsiveValue<ItemsValue>;
-  align?: ResponsiveValue<AlignValue>;
+    direction?: ResponsiveValue<Direction>;
+    wrap?: ResponsiveValue<Wrap>;
+    justify?: ResponsiveValue<JustifyValue>;
+    items?: ResponsiveValue<ItemsValue>;
+    align?: ResponsiveValue<AlignValue>;
 };
 
 export type { FlexProps };

@@ -26,7 +26,7 @@ import * as React from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { DayPicker } from "react-day-picker"
 
-import { cn } from "@/src/utilities/utils"
+import { cn } from "@/src/utils/classnames"
 import { buttonVariants } from "@/src/lib/components/ui/button"
 
 function Calendar({

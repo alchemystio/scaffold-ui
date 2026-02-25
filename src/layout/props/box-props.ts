@@ -22,36 +22,22 @@
  * SOFTWARE.
  */
 
-const breakpointAliasMap: Record<string, string> = {
-	initial: "",
-	small: "sm",
-	medium: "md",
-	large: "lg",
-	xl: "xl",
-	"2xl": "2xl",
+import type { BaseProps } from './base-props';
+
+type ResponsiveValue<T> = T | { initial?: T;[breakpoint: string]: T | undefined };
+
+type Direction = 'row' | 'col' | 'row-reverse' | 'col-reverse';
+type Wrap = 'nowrap' | 'wrap' | 'wrap-reverse';
+type ItemsValue = 'start' | 'center' | 'end' | 'stretch' | 'baseline';
+type JustifyValue = 'start' | 'center' | 'end' | 'between' | 'around' | 'evenly';
+type AlignValue = 'left' | 'center' | 'right' | 'justify';
+
+type BoxProps = BaseProps & {
+    direction?: ResponsiveValue<Direction>;
+    wrap?: ResponsiveValue<Wrap>;
+    justify?: ResponsiveValue<JustifyValue>;
+    items?: ResponsiveValue<ItemsValue>;
+    align?: ResponsiveValue<AlignValue>;
 };
 
-export const resolveResponsiveClass = <T extends string | number>(
-	prefix: string,
-	value?: T | { initial?: T; [key: string]: T | undefined }
-): string[] => {
-	if (value === undefined) return [];
-	if (typeof value !== "object") return [`${prefix}-${value}`];
-
-	return Object.entries(value).map(([key, val]) => {
-		const bp = breakpointAliasMap[key] ?? key;
-		return bp ? `${bp}:${prefix}-${val}` : `${prefix}-${val}`;
-	});
-};
-
-export const resolveEnumClass = <T extends string>(
-	value?: T | { initial?: T; [key: string]: T | undefined }
-): string[] => {
-	if (!value) return [];
-	if (typeof value !== "object") return [value];
-
-	return Object.entries(value).map(([key, val]) => {
-		const bp = breakpointAliasMap[key] ?? key;
-		return bp ? `${bp}:${val}` : `${val}`;
-	});
-};
+export type { BoxProps };
