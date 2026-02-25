@@ -24,7 +24,7 @@
 
 import * as React from "react"
 
-import { cn } from "@/src/utils/classnames"
+import { cn } from "@/src/utils/classNames"
 
 function Table({ className, ...props }: React.ComponentProps<"table">) {
   return (

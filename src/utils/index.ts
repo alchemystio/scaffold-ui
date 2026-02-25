@@ -22,6 +22,5 @@
  * SOFTWARE.
  */
 
-export * from '../layout/core/responsive-engine';
-export * from './classnames';
+export * from './classNames';
 export * from './element-props';

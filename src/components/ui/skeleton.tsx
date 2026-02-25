@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-import { cn } from "@/src/utils/classnames"
+import { cn } from "@/src/utils/classNames"
 
 function Skeleton({ className, ...props }: React.ComponentProps<"div">) {
   return (
